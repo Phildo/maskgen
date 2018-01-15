@@ -1,12 +1,16 @@
-make: a.out
+IN=maskgen.cpp
+OUT=maskgen
+RARGS=3 7
+
+make: $(OUT)
 	
 
-run: a.out
-	./a.out
+run: $(OUT)
+	./$(OUT) $(RARGS)
 
 debug:
-	gcc -ggdb3 maskgen.cpp && gdb ./a.out
+	gcc -ggdb3 $(IN) -o $(OUT) && gdb --args ./$(OUT) $(RARGS)
 
-a.out: maskgen.cpp
-	gcc maskgen.cpp
+a.out: $(IN)
+	gcc $(IN) -o $(OUT)
 
