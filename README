@@ -1,0 +1,13 @@
+Really simple really quick c++ program to generate all hashcat-style mask combinations that exhaustively-and-exactly cover n-length passwords w/ m character sets, ensuring at least one of each character set occurs in the password.
+
+Installation
+
+`make #alternatively, just gcc maskgen.cpp -o maskgen`
+
+Run
+
+`maskgen 2 3 #maskgen n_sets n_characters`
+
+Will create all combinations of n_sets of length n_characters, throwing out all possibilities that don't have at least one of each set.
+That's it! glhf
+
